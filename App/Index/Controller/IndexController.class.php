@@ -28,7 +28,7 @@ class IndexController extends Controller {
 
 	Public function delete($id) {
 		if ($id) {
-			# code...
+			$wall = M('wall') ->select($id); 
 		}
 	}
 
