@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+  <script type='text/javascript'>
+	window.onload = function(){
+		setTimeout(function(){
+			window.location.href='<?php echo __APP__; ?>';
+		}, 5000
+	  );
+	}  
+  </script>
+ </head>
+ <body>
+	<div>
+		<p><?php echo $e['message']; ?></p>
+		<div>
+			页面将在 5 秒后自动回到首页
+		</div>
+	</div>
+ </body>
+</html>
