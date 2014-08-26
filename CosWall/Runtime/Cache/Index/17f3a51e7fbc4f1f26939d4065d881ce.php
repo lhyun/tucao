@@ -1,0 +1,79 @@
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport"  content="width=device-width, initial-scale=1"/>
+		<link rel="stylesheet" type="text/css" href="/tptest/Public/Css/bootstrap.css"/>
+		<link rel="stylesheet" type="text/css" href="/tptest/Public/Css/style.css"/>
+		<title>吐槽墙</title>
+	</head>
+	<body>
+		<header class="container-fluid">
+			<div class="logo">
+				
+			</div>
+			<ul class="nav nav-pills tnav pull-right">
+				<li class="user">
+					<span class="glyphicon glyphicon-user"></span>
+					<span> 嗨~,卜头儿</span>
+				</li>
+				<li class="pub">
+					<span class="glyphicon glyphicon-text-width"></span>
+					<span><a href="#" id="btn-click"> 发表</a></span>
+				</li>
+				<li class="_logout">
+					<span class="glyphicon glyphicon-off"></span>
+					<span><a href="http://i.buaa.edu.cn"> 返回</a></span>
+				</li>
+			</ul>
+		</header>
+		<!--左侧导航栏-->
+		<nav class="lnav"  data-spy="affix"  data-offset-bottom="200">
+			<div id="lhead">
+				<span>北京航空航天大学</span>
+				<a href="#"><span class="glyphicon glyphicon-list" style="color:#FFFFFF"></span></a>
+			</div>
+			<ul class="nav">
+				<li><a href="#"><span class="glyphicon glyphicon-road"> </span> 	足迹</a></li>
+				<li><a href="#"><span class="glyphicon glyphicon-picture"> </span> 相册</a></li>
+				<li><a href="#"><span class="glyphicon glyphicon-pencil">  </span> 日志</a></li>
+				<li><a href="#"><span class="glyphicon glyphicon-thumbs-up">  </span>  投票</a></li>
+				<li><a href="#"><span class="glyphicon glyphicon-hand-down">  </span>  活动</a></li>
+			</ul>
+		</nav>
+		<div class="container">
+			<div class="cos-wall">
+				<?php if(is_array($data)): foreach($data as $key=>$vo): ?><div class="cos-content">
+						<span class="glyphicon glyphicon-pushpin"></span>
+						<?php echo ($vo["content"]); ?>
+					</div><?php endforeach; endif; ?>
+				<!--<div class="cos-content"></div>-->
+			</div>
+
+		</div>
+
+		<!--遮罩层-->
+		<div class="mask">
+			<div class="container" id="cos-pub">
+				<button type="button" class="close" id="btn-close">
+					<span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+				</button>
+				<h2>有何高招</h2>
+				<form action="" method="" role="form">
+					<input style="display: none;" id="userID" name="userID" value="11061192" />
+					<textarea name="cos-text" id="cos-text" rows="8" class="form-control" placeholder="吐槽~" required></textarea>
+					<input type="button" class="btn btn-danger" id="sub-cos" data-container="body"  value="发表"/>
+				</form>
+			</div>
+		</div>
+	</body>
+
+		<script src="/tptest/Public/Js/jquery.js" type="text/javascript" charset="utf-8"></script>
+		<script src="/tptest/Public/Js/jquery-ui.js" type="text/javascript" charset="utf-8"></script>
+		<script src="/tptest/Public/Js/bootstrap.js" type="text/javascript" charset="utf-8"></script>
+		<script src="/tptest/Public/Js/cosWall.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" charset="utf-8">
+			var handleUrl = '<?php echo U("Index/handle");?>'
+		</script>
+
+</html>

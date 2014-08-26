@@ -1,7 +1,7 @@
 <?php
-
-	define('APP_NAME','App');
-	define('APP_PATH','./App/');
-	define('APP_DEBUG',TRUE);
-	include './ThinkPHP/ThinkPHP.php';
+define('APP_DEBUG', TRUE);
+//define('BIND_MODULE', 'Index');
+define('APP_PATH','./CosWall/');
+define("APP_NAME", "CosWall");
+require 'ThinkPHP/ThinkPHP.php';
 ?>
